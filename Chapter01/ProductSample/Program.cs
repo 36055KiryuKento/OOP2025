@@ -15,7 +15,7 @@
 
             //税込み価格の表示（かりんとうの税込み価格は〇〇円です）
 
-            Console.WriteLine(karinto.Name + "の税込み価格は" +);
+            Console.WriteLine(karinto.Name + "の税込み価格は" + karinto.GetPriceIncludingTax);
 
 
         }
