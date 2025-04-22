@@ -11,11 +11,11 @@
 
             //消費税額の表示（かりんとうの消費税額は○○円です）
 
-            Console.WriteLine(karinto.Name + "の消費税額は" + karinto.GetTax + "です");
+            Console.WriteLine(karinto.Name + "の消費税額は" + karinto.GetTax() + "円です");
 
             //税込み価格の表示（かりんとうの税込み価格は〇〇円です）
 
-            Console.WriteLine(karinto.Name + "の税込み価格は" + karinto.GetPriceIncludingTax);
+            Console.WriteLine(karinto.Name + "の税込み価格は" + karinto.GetPriceIncludingTax() + "円です");
 
 
         }
