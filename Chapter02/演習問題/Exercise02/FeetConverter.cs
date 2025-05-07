@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DistanceConverter{
-   public class FeetConverter {
+   public class InchConverter {
         //定数
-        private const double raito = 0.3048;
+        private const double raito = 0.0254;
 
-        //メートルからフィートを求める
+        //メートルからインチを求める
         public static double FromMeter(double meter) {
             return meter / raito;
     }
 
-        //フィートからメートルを求める
+        //インチからメートルを求める
         public static double ToMeter(double feet) { 
             return feet * raito;
         }
