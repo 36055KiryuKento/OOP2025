@@ -10,8 +10,8 @@ namespace salesCalculator {
     class SalesCounter {
         private readonly List<Sale> _sales;
         //コンストラクタ
-        public SalesCounter(List<Sale> sales) {
-            _sales = sales;
+        public SalesCounter(string filePath) {
+           _sales = ReadSales(filePath);
         }
 
         //店舗別の売り上げを求める
