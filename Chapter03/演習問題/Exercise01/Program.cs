@@ -28,7 +28,9 @@
         }
 
         public static void Exercise2(List<int> numbers) {
-
+            foreach (var n in numbers) {   
+                Console.WriteLine(n/2.0);
+            }
 
 
         }
