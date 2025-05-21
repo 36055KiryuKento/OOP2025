@@ -20,7 +20,7 @@
         }
 
         public static void Exercise1(List<int> numbers) {
-            var exist = numbers.Exists(n => n % 8  == 0 || n % 9 == 0 );
+            var exist = numbers.Exists(n => n % 8 == 0 || n % 9 == 0);
             if (exist)
                 Console.WriteLine("存在しています");
             else
@@ -28,23 +28,25 @@
         }
 
         public static void Exercise2(List<int> numbers) {
+
+          //  numbers.ForEach(n => Console.WriteLine(n / 2.0));
             foreach (var n in numbers)
                 Console.WriteLine(n / 2.0);
         }
 
         public static void Exercise3(List<int> numbers) {
-            IEnumerable<int> query = numbers
-                .Where(n => n>=50);
-            foreach (var n in query) {
-                Console.WriteLine(n);
+            numbers.Where(n => n > 50).ToList().ForEach(Console.WriteLine);
+
+           // IEnumerable<int> query = numbers
+               // .Where(n => n >= 50);
+           // foreach (var n in query) {
+               // Console.WriteLine(n);
             }
 
 
-
-
-        }
-
         public static void Exercise4(List<int> numbers) {
+            numbers.Select(n => n * 2).ToList().ForEach(Console.WriteLine);
+
 
         }
     }
