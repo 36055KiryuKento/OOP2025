@@ -23,7 +23,7 @@
             }
 
             //IEnumerable<string> query = cities.Reverse(s=>);
-            //.Where(s => s.Length <= 5)//条件にあったものを抽出
+            //. Where(s => s.Length <= 5)//条件にあったものを抽出
             //.Select(s => s.ToLower());//別オブジェクトへ変換（新しい型へ射影する）
             // .OrderBy(s => s);
 
