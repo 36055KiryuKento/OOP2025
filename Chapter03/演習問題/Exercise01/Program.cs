@@ -28,14 +28,19 @@
         }
 
         public static void Exercise2(List<int> numbers) {
-            foreach (var n in numbers) {   
-                Console.WriteLine(n/2.0);
-            }
-
-
+            foreach (var n in numbers)
+                Console.WriteLine(n / 2.0);
         }
 
         public static void Exercise3(List<int> numbers) {
+            IEnumerable<int> query = numbers
+                .Where(n => n>=50);
+            foreach (var n in query) {
+                Console.WriteLine(n);
+            }
+
+
+
 
         }
 
