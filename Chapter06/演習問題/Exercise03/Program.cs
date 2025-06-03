@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 namespace Exercise03 {
     internal class Program {
         static void Main(string[] args) {
@@ -33,18 +35,20 @@ namespace Exercise03 {
         }
 
         private static void Exercise3(string text) {
-
-
+            var array = text.Split(' ');
+            var sb = new StringBuilder();
+            foreach (var word in array) {
+                sb.Append(" ");
+                sb.Append(word);
+            }
+            //末尾はピリオド（.）で終わる
+            Console.WriteLine(sb + ".");
         }
 
         private static void Exercise4(string text) {
-            var words = text.Split(' ');//Splitで空白で区切る
-            foreach (var word in words.Where(w => w.Length >= 1)) { // 1文字以上の単語を抽出
-                if()
-                Console.WriteLine(word);
-
+            var count = text.Split(' ').Length;//Splitで空白で区切る
+            Console.WriteLine("単語数:[0]",count);
             }
-        }
 
         private static void Exercise5(string text) {
             var words = text.Split(' ');//Splitで空白で区切る
