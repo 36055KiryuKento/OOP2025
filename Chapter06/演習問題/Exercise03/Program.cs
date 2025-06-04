@@ -21,7 +21,12 @@ namespace Exercise03 {
             Console.WriteLine("6.3.5");
             Exercise5(text);
 
+            Console.WriteLine("6.3.99");
+            Exercise6(text);
+
         }
+
+
 
         private static void Exercise1(string text) {
             var Count = text.Count(c => c == ' ');//Countで空白をカウント
@@ -47,14 +52,35 @@ namespace Exercise03 {
 
         private static void Exercise4(string text) {
             var count = text.Split(' ').Length;//Splitで空白で区切る
-            Console.WriteLine("単語数:[0]",count);
-            }
+            Console.WriteLine("単語数:[0]", count);
+        }
 
         private static void Exercise5(string text) {
             var words = text.Split(' ');//Splitで空白で区切る
             foreach (var word in words.Where(w => w.Length <= 4)) { // 4文字以下の単語を抽出
-             Console.WriteLine(word);
+                Console.WriteLine(word);
+            }
+        }
+            //'a'から順にカウントして表示
+            private static void Exercise6(string text) {
+           for(char ch = 'a'; ch  <= 'z'; ch++) {
+                Console.WriteLine($"{ch}:{text.Count(tc => tc == ch)}");
+            }
+
+
+
+
+
+            //var count = text
+           // .Where(c => char.IsLetter(c))
+           // .Select(c => char.ToLower(c)) 
+           // .GroupBy(c => c)
+            //.OrderBy(c => c.Key);
+
+            //foreach (var texts in count) {
+             //   Console.WriteLine($"{texts.Key}: {texts.Count()}");
             }
         }
     }
-}
+
+
