@@ -24,10 +24,10 @@ namespace Exercise02 {
         }
 
         private static void Exercise2(YearMonth[] ymCollection) {
-            foreach(var ym in ymCollection) {
+            foreach (var ym in ymCollection) {
                 Console.WriteLine(ym);
             }
-           
+
         }
 
         //5.2.3
@@ -38,18 +38,31 @@ namespace Exercise02 {
             }
             return null;
         }
-         
-
-
-           
-            
-
+        //5.2.4
         private static void Exercise4(YearMonth[] ymCollection) {
-           
-        }
+            // var ym = FindFirst21C(ymCollection);
+            // if (ym is null) {
+            //   Console.WriteLine("21世紀のデータはありません");
+            // } else {
+            //   Console.WriteLine(ym);
+            // }
 
+
+            //null合体演算子
+
+            // var yearMouth = FindFirst21C(ymCollection);
+
+            //  var str = yearMouth?.ToString() ?? "21世紀のデータはありません";
+            // Console.WriteLine(str);
+
+            Console.WriteLine(FindFirst21C(ymCollection)?.ToString() ?? "21世紀のデータはありません");
+        }
+        //5.2.5
         private static void Exercise5(YearMonth[] ymCollection) {
-            
+            var array = ymCollection.Select(ym => ym.AddOneMonth()).ToArray();
+            Exercise2(array);
+
+
         }
     }
 }
