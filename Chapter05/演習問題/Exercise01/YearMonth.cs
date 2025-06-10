@@ -32,6 +32,5 @@ namespace Exercise01 {
         }
 
         //5.1.4
-        public override string ToString() =>
            }
 }
