@@ -24,15 +24,32 @@ namespace Exercise02 {
         }
 
         private static void Exercise2(YearMonth[] ymCollection) {
-            throw new NotImplementedException();
+            foreach(var ym in ymCollection) {
+                Console.WriteLine(ym);
+            }
+           
         }
 
+        //5.2.3
+        private static YearMonth? FindFirst21C(YearMonth[] ymCollection) {
+            foreach (var ym in ymCollection) {
+                if (ym.Is21Century)
+                    return ym;
+            }
+            return null;
+        }
+         
+
+
+           
+            
+
         private static void Exercise4(YearMonth[] ymCollection) {
-            throw new NotImplementedException();
+           
         }
 
         private static void Exercise5(YearMonth[] ymCollection) {
-            throw new NotImplementedException();
+            
         }
     }
 }
