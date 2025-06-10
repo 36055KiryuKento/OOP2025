@@ -24,13 +24,14 @@ namespace Exercise01 {
 
     //5.1.3
     public YearMonth AddOneMonth() {
-            if (Month<=12) {
+            if (Month<=11) {
                 return new YearMonth( Year,Month+1 );//12月以外
             } else {
-                return new YearMonth(Year+1 ,Month-11 );//12月
+                return new YearMonth(Year+1 ,1 );//12月
             }
         }
 
         //5.1.4
-           }
-}
+        public override string ToString()=> $"{},{}";
+        }
+    }
