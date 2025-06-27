@@ -12,16 +12,16 @@ namespace Exercise01 {
         private static void DisplayDateParttern1(DateTime dateTime) {
             //2024/03/09 19:03
             //string.Formatを使った例
-            var formatted = string.Format("{0:yyyy/MM/dd HH:mm}",dateTime);
-            Console.WriteLine(formatted);
+            var str = string.Format($"{dateTime:yyyy/MM/dd HH:mm}");
+            Console.WriteLine(str);
 
         }
 
         private static void DisplayDateParttern2(DateTime dateTime) {
             //2024年03月09日　19時03分09秒
             //DateTime.Tostringを使った例
-            var formatted = dateTime.ToString("yyyy年MM月dd日　HH時mm分ss秒");
-            Console.WriteLine(formatted);
+            var str = dateTime.ToString("yyyy年MM月dd日　HH時mm分ss秒");
+            Console.WriteLine(str);
 
         }
 
@@ -29,8 +29,8 @@ namespace Exercise01 {
             var culture = new CultureInfo("ja-JP");
             culture.DateTimeFormat.Calendar = new JapaneseCalendar();
 
-            string formatted = dateTime.ToString("ggyy年MM月dd日", culture);
-            Console.WriteLine(formatted);
+            var str = dateTime.ToString("ggyy年MM月dd日", culture);
+            Console.WriteLine(str);
 
         }
     }
