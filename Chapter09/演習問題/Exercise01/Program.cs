@@ -1,0 +1,37 @@
+﻿using System.Globalization;
+
+namespace Exercise01 {
+    internal class Program {
+        static void Main(string[] args) {
+            var dateTime = DateTime.Now;
+            DisplayDateParttern1(dateTime);
+            DisplayDateParttern2(dateTime);
+            DisplayDateParttern3(dateTime);
+        }
+
+        private static void DisplayDateParttern1(DateTime dateTime) {
+            //2024/03/09 19:03
+            //string.Formatを使った例
+            var formatted = string.Format("{0:yyyy/MM/dd HH:mm}",dateTime);
+            Console.WriteLine(formatted);
+
+        }
+
+        private static void DisplayDateParttern2(DateTime dateTime) {
+            //2024年03月09日　19時03分09秒
+            //DateTime.Tostringを使った例
+            var formatted = dateTime.ToString("yyyy年MM月dd日　HH時mm分ss秒");
+            Console.WriteLine(formatted);
+
+        }
+
+        private static void DisplayDateParttern3(DateTime dateTime) {
+            var culture = new CultureInfo("ja-JP");
+            culture.DateTimeFormat.Calendar = new JapaneseCalendar();
+
+            string formatted = dateTime.ToString("ggyy年MM月dd日", culture);
+            Console.WriteLine(formatted);
+
+        }
+    }
+}
