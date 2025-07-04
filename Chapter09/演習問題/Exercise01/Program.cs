@@ -29,8 +29,18 @@ namespace Exercise01 {
             var culture = new CultureInfo("ja-JP");
             culture.DateTimeFormat.Calendar = new JapaneseCalendar();
 
-            var str = dateTime.ToString("ggyy年MM月dd日", culture);
+            //和暦2桁表示（ゼロサプレスなし）
+            var datestr = dateTime.ToString("ggyy", culture);
+            var dayOfWeek = culture.DateTimeFormat.GetDayName(dateTime.DayOfWeek);
+
+            var str = string.Format($"{datestr}年{dateTime.Month,2}月{dateTime.Day}日({dayOfWeek})");
             Console.WriteLine(str);
+
+            //和暦2桁表示（ゼロサプレスあり）
+            var cul = dateTime.ToString("gg", culture);
+            var year = int.Parse(dateTime.ToString("yy", culture));
+            var str2 = string.Format($"{cul}{year,2}年{dateTime.Month,2}月{dateTime.Day,2}日({dayOfWeek})");
+            Console.WriteLine(str2);
 
         }
     }
