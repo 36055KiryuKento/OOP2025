@@ -28,7 +28,7 @@ namespace Test01 {
         }
         //メソッドの概要： 
         public IDictionary<string, int> GetPerStudentScore() {
-            var dict = new SortedDictionary<string, int>();
+            var dict = new Dictionary<string, int>();
             foreach (var score in _score) {
                 if (dict.ContainsKey(score.Name)) {
                     dict[score.Name] += score.Score;
