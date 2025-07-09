@@ -26,7 +26,6 @@ namespace Test01 {
             }
             return scores;
         }
-
         //メソッドの概要： 
         public IDictionary<string, int> GetPerStudentScore() {
             var dict = new SortedDictionary<string, int>();
