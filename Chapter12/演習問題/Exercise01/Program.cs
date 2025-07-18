@@ -80,12 +80,15 @@ namespace Exercise01 {
         static Employee[] Deserialize_f(string filePath) {
             var options = new JsonSerializerOptions {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                WriteIndented = true,
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
             };
-            byte[] utf8Bytes = File.ReadAllBytes(filePath);
-            return JsonSerializer.Deserialize<Employee[]>(utf8Bytes, options) ;
-
+            var text = File.ReadAllText(filePath);
+            var employee = JsonSerializer.Deserialize<Employee[]>(text, options);
+            return employee ?? [];
         }
     }
+
 
     public record Employee {
         public int Id { get; set; }
@@ -93,6 +96,7 @@ namespace Exercise01 {
         public DateTime HireDate { get; set; }
     }
 }
+
 
 
 
