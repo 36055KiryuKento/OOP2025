@@ -28,17 +28,21 @@ namespace RssReader {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            {
-                // ComboBoxカテゴリを追加
+
+           // cbUrl.DataSource = rssUrlDict.Select(k => k.Key).ToList();
+           // GoFowa
+            
+                //// ComboBoxカテゴリを追加
                 cbUrl.Items.AddRange(rssUrlDict.Keys.ToArray());
 
             }
-        }
+        
+        
         private async void btRssGet_Click(object sender, EventArgs e) {
 
             using (var hc = new HttpClient()) {
 
-                string xml = await hc.GetStringAsync(cbUrl.Text);
+                string xml = await hc.GetStringAsync(getRssUrl(cbUrl.Text));
                 XDocument xdoc = XDocument.Parse(xml);
 
                 //RSSを解析して必要な要素を取得
@@ -57,6 +61,12 @@ namespace RssReader {
             }
 
 
+        }
+        private string getRssUrl(string str) {
+            if (rssUrlDict.ContainsKey(str)) {
+                return rssUrlDict[str];
+            }
+            return str;
         }
 
         //タイトルを選択（クリック）したときに呼ばれるイベントハンドラ
