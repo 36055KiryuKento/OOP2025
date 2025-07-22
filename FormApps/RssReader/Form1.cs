@@ -1,5 +1,7 @@
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace RssReader {
@@ -44,15 +46,37 @@ namespace RssReader {
 
         }
 
+
         private void btMove_Click(object sender, EventArgs e) {
-            wvRssLink.Source = new Uri(items[lbTitles.SelectedIndex ].Link);
+            label1.Visible = false;
+            if (wvRssLink.CanGoForward) {
+                wvRssLink.GoForward();
+            } else {
+                lblStatus.Text = "これ以上進めません。";
+                lblStatus.Visible = true;   // メッセージ表示
+            }
         }
 
+
         private void btReturn_Click(object sender, EventArgs e) {
-            wvRssLink.Source = new Uri(items[lbTitles.SelectedIndex ].Link);
+            lblStatus.Visible = false;  // メッセージ非表示
+            if (wvRssLink.CanGoBack) {
+                wvRssLink.GoBack();
+            } else {
+                label1.Text = "これ以上戻れません。";
+                label1.Visible = true;
+
+
+
+            }
+
+
+
         }
     }
 }
+
+
 
 
 
