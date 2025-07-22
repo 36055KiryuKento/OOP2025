@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             Button btReturn;
-            tbUrl = new TextBox();
             btRssGet = new Button();
             lbTitles = new ListBox();
             wvRssLink = new Microsoft.Web.WebView2.WinForms.WebView2();
             btMove = new Button();
             lblStatus = new Label();
             label1 = new Label();
+            cbUrl = new ComboBox();
             btReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)wvRssLink).BeginInit();
             SuspendLayout();
@@ -44,14 +44,6 @@
             btReturn.Text = "戻る";
             btReturn.UseVisualStyleBackColor = true;
             btReturn.Click += btReturn_Click;
-            // 
-            // tbUrl
-            // 
-            tbUrl.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
-            tbUrl.Location = new Point(211, 12);
-            tbUrl.Name = "tbUrl";
-            tbUrl.Size = new Size(507, 33);
-            tbUrl.TabIndex = 0;
             // 
             // btRssGet
             // 
@@ -118,11 +110,21 @@
             label1.Size = new Size(0, 128);
             label1.TabIndex = 7;
             // 
+            // cbUrl
+            // 
+            cbUrl.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            cbUrl.FormattingEnabled = true;
+            cbUrl.Location = new Point(198, 12);
+            cbUrl.Name = "cbUrl";
+            cbUrl.Size = new Size(520, 33);
+            cbUrl.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1247, 667);
+            Controls.Add(cbUrl);
             Controls.Add(label1);
             Controls.Add(lblStatus);
             Controls.Add(btMove);
@@ -130,23 +132,23 @@
             Controls.Add(wvRssLink);
             Controls.Add(lbTitles);
             Controls.Add(btRssGet);
-            Controls.Add(tbUrl);
             Name = "Form1";
             Text = "RSSリーダー";
-        
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)wvRssLink).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox tbUrl;
         private Button btRssGet;
         private ListBox lbTitles;
         private Microsoft.Web.WebView2.WinForms.WebView2 wvRssLink;
         private Button btMove;
         private Label lblStatus;
         private Label label1;
+        private TextBox tbURLs;
+        private TextBox tbURLt;
+        private ComboBox cbUrl;
     }
 }
