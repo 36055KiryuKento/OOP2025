@@ -9,16 +9,15 @@
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
-
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="33*">
-            </RowDefinition>
-            <RowDefinition Height="34*"/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <TextBlock Text="{Binding GreetingMessage}"/>
+        <Button Content="ChangeMessage" Grid.Row="1" 
+                Command="{Binding ChangeMessageCommand}"/>
 
-        <TextBlock Text="{Binding GreetingMessage}" Grid.RowSpan="2"/>
-        <Button Content="ChangeMessage"  Grid.Row="1"
-                Command="{Binding ChangeMessageCommand}" Grid.RowSpan="2" Click="Button_Click"/>
     </Grid>
 </Window>
