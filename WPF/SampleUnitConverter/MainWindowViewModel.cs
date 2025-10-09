@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace SampleUnitConverter{
-   internal class MainWindowViewModel:ViewModel{
+    internal class MainWindowViewModel : BindableBase {
 
         //フィールド
         private double metricValue;
@@ -14,9 +14,9 @@ namespace SampleUnitConverter{
 
 
         //▲で呼ばれるコマンド
-        public ICommand ImperialUnitToMetric { get; private set; }
+        public DelegateCommand ImperialUnitToMetric { get; private set; }
         //▼で呼ばれるコマンド
-        public ICommand MetricToImperialUnit { get; private set; }
+        public DelegateCommand MetricToImperialUnit { get; private set; }
 
 
         //上のComboBoxで選択されている値
@@ -33,19 +33,14 @@ namespace SampleUnitConverter{
         //プロパティ
         public double MetricValue {
             get => metricValue;
-            set {
-                this.metricValue = value;
-                this.OnPropertyChanged();
-            }
+            set => SetProperty(ref metricValue, value);
         }
 
         public double ImperialValue {
             get => imperialValue;
-            set {
-                this.imperialValue = value;
-                this.OnPropertyChanged();
-            }
+            set => SetProperty(ref imperialValue, value);
         }
+        
 
         public MainWindowViewModel() {
 
