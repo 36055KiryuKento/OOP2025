@@ -13,24 +13,24 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="名前 :" Width="80" VerticalAlignment="Center"/>
+                <TextBlock Text="名前" Width="80" VerticalAlignment="Center" FontSize="20"/>
             <TextBox x:Name="NameTextBox" Width="250" HorizontalAlignment="Right" Margin="5" TextChanged="NameTextBox_TextChanged"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="電話番号 :" Width="80" VerticalAlignment="Center"/>
+                <TextBlock Text="電話番号" Width="80" VerticalAlignment="Center" FontSize="20"/>
                 <TextBox x:Name="PhoneTextBox" Width="250" HorizontalAlignment="Right" Margin="5" TextChanged="PhoneTextBox_TextChanged"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="住所 :" Width="80" VerticalAlignment="Center"/>
+                <TextBlock Text="住所" Width="80" VerticalAlignment="Center" FontSize="20"/>
                 <TextBox x:Name="addressTextBox" Width="250" HorizontalAlignment="Right" Margin="5" TextChanged="addressTextBox_TextChanged"/>
             </StackPanel>
 
-            <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="20" Height="40"/>
-            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click" Margin="20" Height="40"/>
-            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="20" Height="40"/>
-            <Button Content="画像" x:Name="ImageButton" Click="ImageButton_Click" Margin="20" Height="40" />
+            <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="20" Height="40" FontSize="25"/>
+            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click" Margin="20" Height="40" FontSize="25"/>
+            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="20" Height="40" FontSize="25"/>
+            <Button Content="画像" x:Name="ImageButton" Click="ImageButton_Click" Margin="20" Height="40" FontSize="25"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <TextBox x:Name="SearchTextBox" Margin="5" FontSize="20" Height="40" TextChanged="SearchTextBox_TextChanged"/>
