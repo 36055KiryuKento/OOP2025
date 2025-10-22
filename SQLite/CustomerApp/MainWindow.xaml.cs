@@ -97,6 +97,7 @@ public partial class MainWindow : Window {
             connection.CreateTable<Person>();
             connection.Insert(person);
         }
+        ReadDatabase(); // 保存後リスト更新
     }
 
 
