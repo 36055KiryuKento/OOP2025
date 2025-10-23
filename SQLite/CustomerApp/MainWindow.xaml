@@ -5,47 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomerApp"
         mc:Ignorable="d"
-        Title="顧客管理アプリケーション" Height="450" Width="800">
+        Title="顧客管理アプリケーション" Height="450" Width="800" Background="SkyBlue">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="350" />
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="3">
                 <TextBlock Text="名前" Width="80" VerticalAlignment="Center" FontSize="20"/>
-                <TextBox x:Name="NameTextBox" Width="250" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="NameTextBox" Width="250" HorizontalAlignment="Right" Margin="3" Background="Lavender"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="3">
                 <TextBlock Text="電話番号" Width="80" VerticalAlignment="Center" FontSize="20"/>
-                <TextBox x:Name="PhoneTextBox" Width="250" HorizontalAlignment="Right" Margin="5"/>
+                <TextBox x:Name="PhoneTextBox" Width="250" HorizontalAlignment="Right" Margin="3" Background="Lavender"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="3">
                 <TextBlock Text="住所" Width="80" VerticalAlignment="Center" FontSize="20"/>
-                <TextBox x:Name="addressTextBox" Width="250" HorizontalAlignment="Right" Margin="5" />
+                <TextBox x:Name="addressTextBox" Width="250" HorizontalAlignment="Right" Margin="3" Background="Lavender"/>
             </StackPanel>
 
-            <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="10" Height="40" FontSize="25"/>
-            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click" Margin="10" Height="40" FontSize="25"/>
-            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="10" Height="40" FontSize="25"/>
-            <StackPanel Orientation="Horizontal" Margin="20">
+            <Button Content="更新" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="5" Height="35" FontSize="25"  Background="AliceBlue"/>
+            <Button Content="保存" x:Name="SaveButton" Click="SaveButton_Click" Margin="5" Height="35" FontSize="25"  Background="AliceBlue"/>
+            <Button Content="削除" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="5" Height="35" FontSize="25"  Background="AliceBlue"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <Button Content="画像" x:Name="ImageButton" Click="ImageButton_Click"
-            Width="80" Height="60" FontSize="20" Margin="0,0,10,0"/>
-                <Image x:Name="SelectedImage" Width="220" Height="100" Stretch="UniformToFill"/>
+            Width="70" Height="70" FontSize="20"  Background="AliceBlue"/>
+                <Image x:Name="SelectedImage" Width="199" Height="155" Stretch="UniformToFill" Margin="5" />
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <TextBox x:Name="SearchTextBox" Margin="5" FontSize="20" Height="40"/>
-            <ListView x:Name="PersonListView"  Margin="0,5,0,0" Height="375" Width="440">
+            <TextBox x:Name="SearchTextBox" Margin="5" FontSize="20" Height="40" Background="Lavender" TextChanged="SearchTextBox_TextChanged_1"/>
+            <ListView x:Name="PersonListView"  Margin="0,5,0,0" Height="375" Width="440" Background="Lavender" SelectionChanged="PersonListView_SelectionChanged_1">
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        
                         <StackPanel>
                             <TextBlock Text="{Binding Id}"/>
                             <TextBlock Text="{Binding Name}" FontSize="20" />
                             <TextBlock Text="{Binding Phone}" Foreground="Blue"/>
-                            <TextBlock Text="{Binding address}" Foreground="HotPink" />
+                            <TextBlock Text="{Binding Address}" Foreground="HotPink" />
+                            <Image Width="60" Height="60" Source="{Binding PhotoImage}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
