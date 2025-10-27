@@ -20,7 +20,6 @@ namespace CustomerApp {
     /// </summary>
     public partial class MainWindow : Window {
 
-        OpenFileDialog ofd;
         private List<Customer> _customer = new List<Customer>();
 
         public MainWindow() {
@@ -63,7 +62,7 @@ namespace CustomerApp {
         private void UpdateButton_Click(object sender, RoutedEventArgs e) {
 
             using (var connection = new SQLiteConnection(App.databasePath)) {
-                connection.CreateTable<Customer>();
+            
 
                 var selectedPerson = PersonListView.SelectedItem as Customer;
                 if (selectedPerson is null) return;
@@ -73,7 +72,7 @@ namespace CustomerApp {
                     Name = NameTextBox.Text,
                     Phone = PhoneTextBox.Text,
                     Address = addressTextBox.Text,
-
+                    Picture = ImageSourceToByteArray(SelectedImage.Source)
                 };
 
                 connection.Update(person);
@@ -95,7 +94,7 @@ namespace CustomerApp {
             };
 
             using (var connection = new SQLiteConnection(App.databasePath)) {
-                connection.CreateTable<Customer>();
+               
                 connection.Insert(person);
             }
             ReadDatabase(); // 保存後リスト更新
@@ -113,10 +112,8 @@ namespace CustomerApp {
 
             //データベース接続
             using (var connection = new SQLiteConnection(App.databasePath)) {
-                connection.CreateTable<Customer>();
                 connection.Delete(item);  //データベースから選択されているレコードの削除
                 ReadDatabase();
-                PersonListView.ItemsSource = _customer;
             }
         }
 
@@ -171,20 +168,6 @@ namespace CustomerApp {
                 byteArray = stream.ToArray();
             }
             return byteArray;
-        }
-
-        public static BitmapImage byteToBitmap(byte[] bytes) {
-            var result = new BitmapImage();
-
-            using (var stream = new MemoryStream(bytes)) {
-                result.BeginInit();
-                result.CacheOption = BitmapCacheOption.OnLoad;
-                result.CreateOptions = BitmapCreateOptions.None;
-                result.StreamSource = stream;
-                result.EndInit();
-                result.Freeze();    // 非UIスレッドから作成する場合、Freezeしないとメモリリークするため注意
-            }
-            return result;
         }
     }
 }

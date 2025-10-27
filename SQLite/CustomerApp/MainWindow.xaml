@@ -33,7 +33,7 @@
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Button Content="画像" x:Name="ImageButton" Click="ImageButton_Click"
             Width="70" Height="70" FontSize="20"  Background="AliceBlue"/>
-                <Image x:Name="SelectedImage" Width="199" Height="155" Stretch="UniformToFill" Margin="5" />
+                <Image x:Name="SelectedImage" MaxWidth="200" MaxHeight="250" Stretch="Uniform" Margin="5" />
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -47,7 +47,7 @@
                             <TextBlock Text="{Binding Name}" FontSize="20" />
                             <TextBlock Text="{Binding Phone}" Foreground="Blue"/>
                             <TextBlock Text="{Binding Address}" Foreground="HotPink" />
-                            <Image Width="60" Height="60" Source="{Binding PhotoImage}" />
+                            <Image Width="100" Height="100" Source="{Binding Picture}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
