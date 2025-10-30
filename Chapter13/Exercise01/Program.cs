@@ -113,10 +113,9 @@ namespace Exercise01 {
                             (c, books) => new {
                                 CategoryName = c.Name,
                                 Count = books.Count(),
-
                             })
-                .Where(x => x.Count >= 4)
-                .Select(x => x.CategoryName);
+                    .Where(x => x.Count >= 4)
+                    .Select(x => x.CategoryName);
             foreach (var name in categoryNames) {
                 Console.WriteLine(name);
             }
