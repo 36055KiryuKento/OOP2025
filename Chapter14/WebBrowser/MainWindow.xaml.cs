@@ -1,0 +1,45 @@
+﻿using System.Net.Http;
+using System.Reflection.Emit;
+using System.Security.Policy;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Xml.Linq;
+
+namespace WebBrowser {
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window {
+        public MainWindow() {
+            InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void FowardButton_Click(object sender, RoutedEventArgs e) {
+            label1.Visible = false;
+            if (wvRssLink.CanGoForward) {
+                wvRssLink.GoForward();
+            } else {
+                lblStatus.Text = "これ以上進めません。";
+                lblStatus.Visible = true;   // メッセージ表示
+            }
+        }
+        
+
+        private void GoButton_Click(object sender, RoutedEventArgs e) {
+
+        }
+    }
+}
+   
