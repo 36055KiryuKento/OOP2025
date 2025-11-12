@@ -1,28 +1,29 @@
 ﻿namespace Section01 {
     internal class Program {
         static void Main(string[] args) {
-            List<GreetingBase> list = [
+            List<IGreeting> greetings = [
                 new GreetingMorning(),
-               new GreetingAfternoon(),
-               new GreetingEvening(),
-               ];
+                new GreetingAfternoon(),
+                new GreetingEvening(),
+            ];
 
-            foreach (var obj in list) {
-                string msg = obj.GetMessarge();
+            foreach (var obj in greetings) {
+                string msg = obj.GetMessage();
                 Console.WriteLine(msg);
             }
         }
+    }
 
-        class GreetingMorning : GreetingBase {
-            public override string GetMessarge() => "おはよう";
-        }
+    class GreetingMorning : IGreeting {
+        public string GetMessage() => "おはよう";
+    }
 
-        class GreetingAfternoon : GreetingBase {
-            public override string GetMessarge() => "こんにちわ";
-        }
+    class GreetingAfternoon : IGreeting {
+        public string GetMessage() => "こんにちわ";
+    }
 
-        class GreetingEvening : GreetingBase {
-            public override string GetMessarge() => "こんばんわ";
-        }
+    class GreetingEvening : IGreeting {
+        public string GetMessage() => "こんばんわ";
     }
 }
+
