@@ -2,7 +2,7 @@
     internal class Program {
         static void Main(string[] args) {
             var from = GetConverter("変換元の単位を入力してください");
-            var to = GetConverter("変換元の単位を入力してください");
+            var to = GetConverter("変換先の単位を入力してください");
             var distance = GetDistance(from);
 
             var converter = new DistanceConverter(from, to);
