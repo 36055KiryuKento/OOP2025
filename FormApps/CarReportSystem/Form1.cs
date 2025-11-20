@@ -287,6 +287,10 @@ namespace CarReportSystem {
             }
 
         }
+
+        private void dgvRecord_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
     }
 }
 
