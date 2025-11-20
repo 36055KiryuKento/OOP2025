@@ -8,9 +8,6 @@ namespace TextFileProcessorDI {
     public class TextFileProcessor {
         private ITextFileService _service;
 
-
-
-
         //コンストラクタ
         public TextFileProcessor(ITextFileService service) {
             _service = service;

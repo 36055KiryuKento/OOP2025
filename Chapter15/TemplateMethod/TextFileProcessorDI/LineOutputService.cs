@@ -5,25 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TextFileProcessorDI {
-    internal class LineCounterService : ITextFileService {
-
+    //P362 問題15.1
+    public interface ITextFileService {
         private int _count;
-
         public void Initialize(string fname) {
-                _count = 0;
+            _count = 0;
         }
-        public void Execute(string line) {
-            _count++;
-            if (_count <= 20) {
+      public  void Execute(string line) {
+            if (_count < 20) {
                 Console.WriteLine(line);
+                _count++;
+            }
+            void Terminate() {
+
             }
         }
-
-        public void Terminate() {
-            Console.WriteLine($"{_count}行");
-
-            
-          
-        }
     }
-}
