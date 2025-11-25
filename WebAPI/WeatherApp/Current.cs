@@ -10,6 +10,6 @@ namespace WeatherApp {
         public double temperature_2m { get; set; }
         public double wind_speed_10m { get; set; }
         public double relative_humidity_2m { get; set; }    //湿度
-
+        public int weathercode { get; set; } // 追加
     }
 }

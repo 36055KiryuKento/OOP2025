@@ -1,29 +1,35 @@
 ﻿<Window x:Class="TenkiApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TenkiApp" Height="450" Width="800" Background="LightBlue">
+        Title="TenkiApp" Height="500" Width="900" Background="LightBlue">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="350"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- 左側：都市名の入力 -->
-        <StackPanel Margin="0,10,0,-10">
-            <TextBlock Text="都市名（例：東京、大阪、札幌）" Margin="0,0,0,20"/>
-            <TextBox x:Name="CityBox" Text="東京" Margin="0,0,0,200" Height="43"/>
-            <Button Content="天気を取得"
-                    Width="150"
-                    Height="45"
-                    Click="GetWeather_Click"/>
-        </StackPanel>
+        <!-- 左：日本地図 -->
+        <Image x:Name="JapanMap"
+       Source="pack://application:,,,/Images/japan_map.png"
+       Stretch="Uniform"
+       Grid.Column="0"/>
 
-        <!-- 右側：天気表示 -->
-        <TextBox x:Name="ResultBox"
-                 Grid.Column="1"
-                 Margin="20,0,0,0"
-                 FontSize="16"
-                 TextWrapping="Wrap"
-                 VerticalScrollBarVisibility="Auto"/>
+
+        <!-- 右：都市入力＋天気 -->
+        <StackPanel Grid.Column="1" Margin="20,0,0,0">
+            <TextBlock Text="都市名（例：東京、大阪、札幌）" FontSize="16" Margin="0,0,0,10"/>
+            <TextBox x:Name="CityBox" Height="35" Margin="0,0,0,10"/>
+            <Button Content="天気を取得" Width="150" Height="40" Click="GetWeather_Click"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" VerticalAlignment="Top">
+                <Image x:Name="WeatherIcon" Width="64" Height="64" Margin="0,0,10,0"/>
+                <TextBox x:Name="ResultBox"
+                         FontSize="16"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto"
+                         Height="250"
+                         Width="400"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
