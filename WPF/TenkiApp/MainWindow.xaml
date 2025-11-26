@@ -20,10 +20,10 @@
             <Button Content="東京" Width="56" Height="35"
                     Click="CityButton_Click"
                     Canvas.Left="228" Canvas.Top="260" Panel.ZIndex="1"/>
-            <Button Content="北海道" Width="58" Height="37"
+            <Button Content="ホッカイドウ" Width="58" Height="37"
                     Click="CityButton_Click"
                     Canvas.Left="198" Canvas.Top="91" Panel.ZIndex="1"/>
-            <Button Content="大阪" Width="51" Height="35"
+            <Button Content="オオサカ" Width="51" Height="35"
                     Click="CityButton_Click"
                     Canvas.Left="141" Canvas.Top="260" Panel.ZIndex="1"/>
         </Canvas>
