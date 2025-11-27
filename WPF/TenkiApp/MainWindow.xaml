@@ -31,7 +31,7 @@
         <!-- 右：都市入力 + 天気表示 -->
         <StackPanel Grid.Column="1" Margin="20,0,0,0">
             <TextBlock Text="都市名（例：東京、大阪、札幌）" FontSize="16" Margin="0,0,0,10"/>
-            <TextBox x:Name="CityBox" Height="35" Margin="0,0,0,10"/>
+            <TextBox x:Name="CityBox" Height="35" Text="都市名を入力" Margin="0,0,0,10"/>
             <Button Content="天気を取得" Width="150" Height="40" Click="GetWeather_Click"/>
 
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
